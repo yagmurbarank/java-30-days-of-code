@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Title:");
         String title = sc.nextLine();
         System.out.println("Author:");
-        String author = sc.next();
+        String author = sc.nextLine();
         System.out.println("Price:");
         int price = sc.nextInt();
 
