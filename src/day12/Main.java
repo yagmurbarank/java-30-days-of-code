@@ -1,5 +1,7 @@
 package src.day12;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -7,19 +9,25 @@ public class Main {
             Scanner sc = new Scanner(System.in);
 
 
-            String firstName = sc.next();
+            System.out.println("First Name:");
+            String firstName = sc.nextLine();
+            System.out.println("Last Name:");
             String lastName = sc.next();
+            System.out.println("ID Number:");
             int idNumber = sc.nextInt();
+            System.out.println("Enter scores (enter -1 to stop):");
+            List<Integer> scoresList = new ArrayList<>();
 
 
-            int numScores = sc.nextInt();
-            int[] scores = new int[numScores];
-            for (int i = 0; i < numScores; i++) {
-                scores[i] = sc.nextInt();
+            while (true) {
+                int score = sc.nextInt();
+                if (score == -1) {
+                    break;
+                }
+                scoresList.add(score);
             }
 
-
-            Student student = new Student(firstName, lastName, idNumber, scores);
+            Student student = new Student(firstName, lastName, idNumber, scoresList);
 
 
             student.printPerson();

@@ -1,12 +1,13 @@
 package src.day12;
 
-    class Student extends Person {
-        private int[] testScores;
+import java.util.List;
 
+class Student extends Person {
+        private List<Integer> testScores;
 
-        public Student(String firstName, String lastName, int idNumber, int[] testScores) {
+        public Student(String firstName, String lastName, int idNumber,  List<Integer> scores) {
             super(firstName, lastName, idNumber);
-            this.testScores = testScores;
+            this.testScores = scores;
         }
 
         public char calculate() {
@@ -14,7 +15,7 @@ package src.day12;
             for (int score : testScores) {
                 sum += score;
             }
-            int average = sum / testScores.length;
+            int average = sum / testScores.size();
 
             if (average >= 90 && average <= 100) {
                 return 'O';
